@@ -7,17 +7,13 @@ import android.support.annotation.Nullable
 import com.example.mguven.broadcast.ScreenActionReceiver
 
 class BackgroundService : Service() {
-  var counter = 0
 
   private val receiver = ScreenActionReceiver()
 
-  override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-
+  override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
     super.onStartCommand(intent, flags, startId)
-    //startTimer()
 
     registerReceiver(receiver, receiver.filter)
-
     return START_STICKY
   }
 
@@ -27,7 +23,7 @@ class BackgroundService : Service() {
   }
 
   @Nullable
-  override fun onBind(intent: Intent): IBinder? {
+  override fun onBind(intent: Intent?): IBinder? {
     return null
   }
 }

@@ -26,17 +26,18 @@ class ScreenActionReceiver : BroadcastReceiver() {
 
     val action = intent.action
 
-
     when (action) {
       Intent.ACTION_SCREEN_ON -> Log.d(TAG, "screen is on...")
       Intent.ACTION_SCREEN_OFF -> Log.d(TAG, "screen is off...")
       Intent.ACTION_USER_PRESENT -> {
         Log.d(TAG, "screen is unlock...")
-        val intentone =
+
+        val intent =
             Intent(context.applicationContext, CardActivity::class.java)
-        intentone.addFlags(
+        intent.addFlags(
             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-        context.startActivity(intentone)
+        context.startActivity(intent)
+
       }
     }
 

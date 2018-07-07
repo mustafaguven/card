@@ -11,13 +11,9 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    if (intent.getBooleanExtra("SHOW_CARD", false)) {
-      startActivity(Intent(this, CardActivity::class.java))
-    } else {
-      val backgroundService = BackgroundService()
-      val intent = Intent(this, backgroundService::class.java)
-      startService(intent)
-    }
-
+    val backgroundService = BackgroundService()
+    val intent = Intent(this, backgroundService::class.java)
+    startService(intent)
+    
   }
 }
