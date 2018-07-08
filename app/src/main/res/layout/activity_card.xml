@@ -5,9 +5,10 @@
     android:background="@color/transparent">
 
 
-  <RelativeLayout android:layout_width="match_parent"
+  <ImageView android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_margin="10dp"
-      android:background="@color/colorAccent">
-  </RelativeLayout>
+      android:layout_margin="40dp"
+      android:src="@drawable/muho"
+      android:scaleType="centerCrop">
+  </ImageView>
 </RelativeLayout>
